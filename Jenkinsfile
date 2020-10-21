@@ -46,7 +46,7 @@ pipeline {
         script {
           docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
 
-            def dockerImage = docker.build("initcron/testfoo:v${env.BUILD_ID}", "./")
+            def dockerImage = docker.build("initcron/testfoo:v${env.BUILD_ID}", ".")
 
             dockerImage.push()
 
